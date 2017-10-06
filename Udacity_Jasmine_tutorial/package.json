@@ -1,0 +1,22 @@
+{
+  "name": "udacity_jasmine_tutorial",
+  "version": "1.0.0",
+  "description": "Udacity Jasmine tutorial",
+  "main": "AddressBook.js",
+  "scripts": {
+    "test": "AddressBookSpec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-42/tdd_tutorials.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-42/tdd_tutorials/issues"
+  },
+  "homepage": "https://github.com/code-42/tdd_tutorials#readme",
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
