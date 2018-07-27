@@ -28,5 +28,12 @@ public class TemplateTest {
 		String expectedMsg = "your test score was: " + score;
 		assertEquals(expectedMsg, template.render(score));
 	}
+	
+	@Test
+	public void canInstantiateATemplate() {
+		
+		Template template = new Template();
+		assertNotNull(template);
+	}
 
 }
