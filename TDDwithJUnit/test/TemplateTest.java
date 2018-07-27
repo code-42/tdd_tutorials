@@ -7,6 +7,8 @@ import org.junit.Test;
 import net.ed.learn.Template;
 
 public class TemplateTest {
+	
+	String thePattern = "your test score was: %d";
 
 	@Before
 	public void setUp() throws Exception {
@@ -19,7 +21,6 @@ public class TemplateTest {
 	@Test
 	public void testRender() {
 		
-		String thePattern = "your test score was: %d";
 		int score = 90;
 		
 		Template template = new Template(thePattern);
@@ -35,5 +36,11 @@ public class TemplateTest {
 		Template template = new Template();
 		assertNotNull(template);
 	}
-
+	
+	@Test
+	public void renderMethodReturnsAString() {
+		
+		Template template = new Template(thePattern);
+		assertNotNull(template.render(88));
+	}
 }
