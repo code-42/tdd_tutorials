@@ -12,7 +12,7 @@ public class Template {
 	}
 	
 	public String render(int score) {
-		return templateText;
+		return String.format(this.templateText, score);
 	}
 
 }

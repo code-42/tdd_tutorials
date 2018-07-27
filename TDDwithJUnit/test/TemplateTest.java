@@ -19,7 +19,7 @@ public class TemplateTest {
 	@Test
 	public void testRender() {
 		
-		String thePattern = "your test score was: ";
+		String thePattern = "your test score was: %d";
 		int score = 90;
 		
 		Template template = new Template(thePattern);
