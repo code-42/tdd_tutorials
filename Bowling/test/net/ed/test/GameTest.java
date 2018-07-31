@@ -53,4 +53,16 @@ public class GameTest {
 		}
 	}
 	
+	@Test
+	public void testSumFrames() {
+		
+		// loop through pins array 
+		int expected = 0;
+		for(int frame : Game.frames) {
+			expected = 0;
+			int actual = Game.frames[0];
+			assertEquals(expected, actual);
+		}
+	}
+	
 }
