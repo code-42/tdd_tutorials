@@ -13,8 +13,14 @@ public class Game {
 	}
 
 	public static int getPins(int pin) {
-		System.out.println("26. getPins == " + pin);
 		return pin;
+	}
+	
+	public static int sum = 0;
+	public static int SumPinsArray(int pin) {
+		sum += pin;
+//		System.out.println(sum);
+		return sum;
 	}
 	
 }

@@ -23,7 +23,7 @@ public class GameTest {
 
 
 	@Test
-	public void testGame() {
+	public void testGameConstructor() {
 
 		// test constructor
 		Game game = new Game();
@@ -35,7 +35,6 @@ public class GameTest {
 		
 		// loop through pins array 
 		for(int pin : Game.pins) {
-//			System.out.println(pin);
 			int expected = pin;
 			int actual = Game.getPins(pin);
 			assertEquals(expected, actual);
@@ -43,13 +42,13 @@ public class GameTest {
 	}
 	
 	@Test
-	public void testAddUpPinsArray() {
+	public void testSumPinsArray() {
 		
 		// loop through pins array 
+		int expected = 0;
 		for(int pin : Game.pins) {
-//			System.out.println(pin);
-			int expected = pin++;
-			int actual = Game.getPins(pin);
+			expected += pin;
+			int actual = Game.SumPinsArray(pin);
 			assertEquals(expected, actual);
 		}
 	}
