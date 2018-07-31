@@ -10,20 +10,11 @@ public class Game {
 	public static void main(String[] args) {
 		
 		Game game = new Game();
-		game.getPins(pins);
-	}
-
-	public static int getPins(int[] pins) {
-
-		// loop through pins array 
-		for(int pin : pins) {
-			return pin;
-		}
-		return 0;
 	}
 
 	public static int getPins(int pin) {
-
+		System.out.println("26. getPins == " + pin);
 		return pin;
 	}
+	
 }

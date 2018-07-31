@@ -2,8 +2,6 @@ package net.ed.test;
 
 import static org.junit.Assert.*;
 
-import java.util.Collection;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,8 +35,20 @@ public class GameTest {
 		
 		// loop through pins array 
 		for(int pin : Game.pins) {
-			System.out.println(pin);
+//			System.out.println(pin);
 			int expected = pin;
+			int actual = Game.getPins(pin);
+			assertEquals(expected, actual);
+		}
+	}
+	
+	@Test
+	public void testAddUpPinsArray() {
+		
+		// loop through pins array 
+		for(int pin : Game.pins) {
+//			System.out.println(pin);
+			int expected = pin++;
 			int actual = Game.getPins(pin);
 			assertEquals(expected, actual);
 		}
