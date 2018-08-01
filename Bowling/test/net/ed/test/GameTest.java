@@ -31,6 +31,16 @@ public class GameTest {
 	}
 	
 	@Test
+	public void testGameInit() {
+		
+		// gameInit initializes rolls[] to all zeros
+		int expected = 0;
+		((Game) classUnderTest).gameInit();
+		int actual = classUnderTest.rolls[0];
+		assertEquals(expected, actual);
+	}
+	
+	@Test
 	public void testPrintInputArray() {
 		
 		// loop through pins array 
@@ -64,5 +74,6 @@ public class GameTest {
 			assertEquals(expected, actual);
 		}
 	}
-	
+
+
 }
