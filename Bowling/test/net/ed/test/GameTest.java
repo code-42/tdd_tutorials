@@ -145,4 +145,24 @@ public class GameTest {
 		assert(Game.gameScore() == 300);
 	}
 	
+	@Test
+	public void testGiven() {
+		((Game) classUnderTest).gameInit();
+		int frameIndex = 0;
+		
+		for (int frame = 0; frame < 10; frame++) {
+			if(Game.scores[frameIndex] == 10) {
+				Game.roll(10);;
+				frameIndex += 2;
+			}
+			else {
+				Game.roll(Game.scores[frameIndex++]);
+				Game.roll(Game.scores[frameIndex++]);
+			}
+		}
+		Game.roll(Game.scores[frameIndex]);
+		System.out.println(Game.gameScore());
+		assert(Game.gameScore() == 133);
+		
+	}
 }
