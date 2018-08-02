@@ -102,4 +102,13 @@ public class GameTest {
 			assertEquals(expected, actual);
 		}
 	}
+	
+	@Test
+	public void testGutterGame() {
+		
+		((Game) classUnderTest).gameInit();
+		Game.rollMany(20, 0);
+		assert(Game.gameScore() == 0);
+	}
+	
 }
