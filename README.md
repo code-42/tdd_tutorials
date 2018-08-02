@@ -24,9 +24,13 @@ TDD helps relieve the anxiety of making changes to code base.
 - Reduce the cost of adding new behavior
 
 ##### Testing lifecycle
-- First, write the test, then run the test
-- Change the code to make the test pass
+![TDD Lifecycle](TDD_lifecycle.jpg "TDD Lifecycle")
+- First, write test cases that fail
+- Make the code work
+- Improve code quality
 - Lather, rinse, repeat
+
+
 
 ##### Some good rules to creating tests
 - **Make each test independent of all the others.** 
