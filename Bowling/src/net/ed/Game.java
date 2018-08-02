@@ -7,7 +7,7 @@ public class Game {
 	public static int[] frames = new int[10];
 	private static int MAXROLLS = 21;
 	public static int[] rolls = new int[21];
-	private static int currentRoll;
+	public static int currentRoll;
 	
 	// no-arg constructor
 	public static void Game() {}
@@ -38,7 +38,12 @@ public class Game {
 	}
 	
 	public void testSumFrames() {
+
+	}
+	
+	public static void roll(int pin) {
 		
+		rolls[currentRoll++] = pin;
 	}
 
 }

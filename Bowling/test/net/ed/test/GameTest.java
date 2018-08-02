@@ -17,11 +17,6 @@ public class GameTest {
 		classUnderTest = new Game();
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
 	@Test
 	public void testGameConstructor() {
 
@@ -75,5 +70,22 @@ public class GameTest {
 		}
 	}
 
+	@Test
+	public void testRoll() {
+		
+		// loop through rolls array 
+		((Game) classUnderTest).gameInit();
+		int expected = 0;
+		for(int pin : Game.pins) {
+			expected = pin;
+			Game.roll(pin);
+			// need to decrement rolls[] index 
+			// get the value in rolls[]
+			int actual = Game.rolls[--Game.currentRoll];
+			// now increment index to where the roll() method left it
+			Game.currentRoll++;
+			assertEquals(expected, actual);
+		}
+	}
 
 }
