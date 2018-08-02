@@ -138,4 +138,11 @@ public class GameTest {
 		assert(Game.gameScore() == 24);
 	}
 	
+	@Test
+	public void testPerfectGame() {
+		((Game) classUnderTest).gameInit();
+		Game.rollMany(12, 10);
+		assert(Game.gameScore() == 300);
+	}
+	
 }
