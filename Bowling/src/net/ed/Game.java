@@ -48,4 +48,16 @@ public class Game {
 		}
 		currentRoll = 0;
 	}
+	
+	public static int gameScore() {
+		
+		int score = 0;
+		int frameIndex = 0;
+		
+		for (int frame = 0; frame < 10; frame++) {
+			score += rolls[frameIndex] + rolls[frameIndex + 1];
+			frameIndex = 2;
+		}
+		return score;
+	}
 }
