@@ -111,4 +111,11 @@ public class GameTest {
 		assert(Game.gameScore() == 0);
 	}
 	
+	@Test
+	public void testAllOnes() {
+		((Game) classUnderTest).gameInit();
+		Game.rollMany(20, 1);
+		assert(Game.gameScore() == 20);
+	}
+	
 }
