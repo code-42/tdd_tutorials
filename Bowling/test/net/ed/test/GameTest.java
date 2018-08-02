@@ -118,4 +118,31 @@ public class GameTest {
 		assert(Game.gameScore() == 20);
 	}
 	
+	@Test
+	public void testOneSpare() {
+		((Game) classUnderTest).gameInit();
+		Game.roll(5);
+		Game.roll(5);
+		Game.roll(3);
+		Game.rollMany(17, 0);
+		assert(Game.gameScore() == 16);
+	}
+	
+	@Test
+	public void testOneStrike() {
+		((Game) classUnderTest).gameInit();
+		Game.roll(10);
+		Game.roll(3);
+		Game.roll(4);
+		Game.rollMany(16, 0);
+		assert(Game.gameScore() == 24);
+	}
+	
+	@Test
+	public void testPerfectGame() {
+		((Game) classUnderTest).gameInit();
+		Game.rollMany(12, 10);
+		assert(Game.gameScore() == 300);
+	}
+	
 }
