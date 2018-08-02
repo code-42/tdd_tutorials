@@ -118,4 +118,14 @@ public class GameTest {
 		assert(Game.gameScore() == 20);
 	}
 	
+	@Test
+	public void testOneSpare() {
+		((Game) classUnderTest).gameInit();
+		Game.roll(5);
+		Game.roll(5);
+		Game.roll(3);
+		Game.rollMany(17, 0);
+		assert(Game.gameScore() == 16);
+	}
+	
 }
