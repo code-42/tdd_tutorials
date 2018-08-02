@@ -37,14 +37,15 @@ public class Game {
 		return sum;
 	}
 	
-	public static void roll(int pin) {
+	public static void roll(int pins) {
 		
-		rolls[currentRoll++] = pin;
+		rolls[currentRoll++] = pins;
 	}
 
-	public static void rollMany(int rolls, int pins) {
-		for (int i = 0; i < rolls; i++) {
+	public static void rollMany(int howManyRolls, int pins) {
+		for (int i = 0; i < howManyRolls; i++) {
 			roll(pins);
 		}
+		currentRoll = 0;
 	}
 }

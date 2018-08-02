@@ -88,4 +88,18 @@ public class GameTest {
 		}
 	}
 
+	@Test
+	public void testRollMany() {
+		
+		// loop through rolls array 
+		((Game) classUnderTest).gameInit();
+		int expected = 0;
+		// for every element in the scores[] array
+		for(int score : Game.scores) {
+			expected = score;
+			Game.rollMany(20, score);
+			int actual = Game.rolls[Game.currentRoll];
+			assertEquals(expected, actual);
+		}
+	}
 }
