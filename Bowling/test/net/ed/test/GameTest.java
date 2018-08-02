@@ -39,21 +39,21 @@ public class GameTest {
 	public void testPrintInputArray() {
 		
 		// loop through pins array 
-		for(int pin : Game.pins) {
-			int expected = pin;
-			int actual = Game.getPins(pin);
+		for(int score : Game.scores) {
+			int expected = score;
+			int actual = Game.getPins(score);
 			assertEquals(expected, actual);
 		}
 	}
 	
 	@Test
-	public void testSumPinsArray() {
+	public void testSumScoresArray() {
 		
 		// loop through pins array 
 		int expected = 0;
-		for(int pin : Game.pins) {
-			expected += pin;
-			int actual = Game.SumPinsArray(pin);
+		for(int score : Game.scores) {
+			expected += score;
+			int actual = Game.sumScoresArray(score);
 			assertEquals(expected, actual);
 		}
 	}
@@ -76,9 +76,9 @@ public class GameTest {
 		// loop through rolls array 
 		((Game) classUnderTest).gameInit();
 		int expected = 0;
-		for(int pin : Game.pins) {
-			expected = pin;
-			Game.roll(pin);
+		for(int score : Game.scores) {
+			expected = score;
+			Game.roll(score);
 			// need to decrement rolls[] index 
 			// get the value in rolls[]
 			int actual = Game.rolls[--Game.currentRoll];
@@ -88,4 +88,18 @@ public class GameTest {
 		}
 	}
 
+	@Test
+	public void testRollMany() {
+		
+		// loop through rolls array 
+		((Game) classUnderTest).gameInit();
+		int expected = 0;
+		// for every element in the scores[] array
+		for(int score : Game.scores) {
+			expected = score;
+			Game.rollMany(20, score);
+			int actual = Game.rolls[Game.currentRoll];
+			assertEquals(expected, actual);
+		}
+	}
 }
