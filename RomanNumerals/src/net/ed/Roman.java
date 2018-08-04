@@ -22,7 +22,12 @@ public class Roman {
 		int result = 0;
 		for (int i = 0; i < romanSplitArr.length; i++) {
 			if(hmap.get(romanSplitArr[i]) != null) {
+				if(i + 1 < romanSplitArr.length && 
+						hmap.get(romanSplitArr[i]) < hmap.get(romanSplitArr[i + 1])) {
+					result -= (hmap.get(romanSplitArr[i]));
+				} else {
 				result += (hmap.get(romanSplitArr[i]));
+				}
 			}
 		}
 		System.out.println("36. result == " + result);

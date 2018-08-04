@@ -10,7 +10,8 @@ public class RomanNumeralsTest {
 		
 		Assert.assertEquals(1,  Roman.Parse("I"));
 		Assert.assertEquals(2,  Roman.Parse("II"));
-		Assert.assertEquals(20,  Roman.Parse("XX"));
+		Assert.assertEquals(9,  Roman.Parse("IX"));
+		Assert.assertEquals(30,  Roman.Parse("XXX"));
 		Assert.assertEquals(10,  Roman.Parse("X"));
 		Assert.assertEquals(4,  Roman.Parse("IV"));
 
