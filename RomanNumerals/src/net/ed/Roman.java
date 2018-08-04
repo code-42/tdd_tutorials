@@ -23,7 +23,7 @@ public class Roman {
 		for (int i = 0; i < romanSplitArr.length; i++) {
 			if(hmap.get(romanSplitArr[i]) != null) {
 				if(i + 1 < romanSplitArr.length && 
-						hmap.get(romanSplitArr[i]) < hmap.get(romanSplitArr[i + 1])) {
+						isSubtractive(romanSplitArr, i)) {
 					result -= (hmap.get(romanSplitArr[i]));
 				} else {
 				result += (hmap.get(romanSplitArr[i]));
@@ -32,6 +32,11 @@ public class Roman {
 		}
 		System.out.println("36. result == " + result);
 		return result;
+	}
+
+	// refactored - hmap.get(romanSplitArr[i]) < hmap.get(romanSplitArr[i + 1])
+	private static boolean isSubtractive(String[] romanSplitArr, int i) {
+		return hmap.get(romanSplitArr[i]) < hmap.get(romanSplitArr[i + 1]);
 	}
 
 }
