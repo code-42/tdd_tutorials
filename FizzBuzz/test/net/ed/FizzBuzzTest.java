@@ -17,8 +17,8 @@ public class FizzBuzzTest {
 
 		Assert.assertEquals("Fizz", FizzBuzz.FizzBuzz(3));
 		Assert.assertEquals("Buzz", FizzBuzz.FizzBuzz(5));
-		Assert.assertEquals("Fizz", FizzBuzz.FizzBuzz(15));
-		Assert.assertEquals("FizzBuzz", FizzBuzz.FizzBuzz(151));
+		Assert.assertEquals("FizzBuzz", FizzBuzz.FizzBuzz(30));
+		Assert.assertEquals("", FizzBuzz.FizzBuzz(151));
 	}
 
 }
