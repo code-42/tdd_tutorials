@@ -47,5 +47,14 @@ class StackTests {
 		Assert.assertEquals(2, stack.peek());
 	}
 
-	
+	@Test
+	public void Peek_PushTwoItemsAndPop_ReturnsHeadElement() {
+		
+		MyStack<Integer> stack = new MyStack<Integer>();
+		stack.push(1);
+		stack.push(2);
+		stack.pop();
+		
+		Assert.assertEquals(1, stack.peek());
+	}
 }
