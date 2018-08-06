@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import net.ed.Game.Winner;
+
 public class TicTacToeTests {
 	
 	@Test
@@ -47,6 +49,7 @@ public class TicTacToeTests {
 	
 	@Test
 	public void testMakingMoves_SetStateCorrectly() {
+		
 		Game game = new Game();
 		game.makeMove(1);
 		game.makeMove(2);
@@ -59,6 +62,28 @@ public class TicTacToeTests {
 		Assert.assertEquals(State.Zero, game.getState(4));
 		
 	}
+	
+	@Test
+	public void GetWinner_ZerosWinVertically_ReturnsZeros() {
+		
+		Game game = new Game();
+		
+		// 2 5 8 - zeros win
+		int[] moves = {1, 2, 3, 5, 7, 8};
+		makeMoves(game, moves);
+		
+		Assert.assertEquals(Winner.Zeroes, game.getWinner());
+	}
+
+	private void makeMoves(Game game, int[] indexes) {
+		
+		for(int index : indexes){
+			game.makeMove(index);
+		}
+		
+	}
+	
+
 
 	
 }

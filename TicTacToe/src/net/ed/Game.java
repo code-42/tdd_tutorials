@@ -37,8 +37,50 @@ public class Game {
 		// TODO Auto-generated method stub
 		return board[index - 1];
 	}
+
+	public enum Winner{
+		Zeroes,
+		Crosses,
+		Draw
+	}
 	
+	public Winner getWinner() {
+		
+		int[] winners = {1,4,7,
+						 2,5,8,
+						 3,6,9,
+						 1,2,3,
+						 4,5,6,
+						 7,8,9,
+						 1,5,9,
+						 3,5,7};
+		
+		return getWinner(winners);
+		
+	}
 	
+	public Winner getWinner(int[] indexes) {
+		
+		for(int i = 0; i < indexes.length; i+=3) {
+			boolean same = AreSame(indexes[i],
+								indexes[i+1],
+								indexes[i+2]);
+			
+			if (same) {
+				State state = getState(indexes[i]);
+				if(state != State.Unset)
+					return state == State.Cross ? Winner.Crosses : Winner.Zeroes;
+			}
+			
+		}
+		return Winner.Draw;
+		
+	}
+
+	private boolean AreSame(int a, int b, int c) {
+		
+		return getState(a) == getState(b) && getState(a) == getState(c);
+	}
 
 
 }
