@@ -37,6 +37,21 @@ public class TicTacToeTests {
 		game.makeMove(1);
 		
 	}
+	
+	@Test
+	public void testMakingMoves_SetStateCorrectly() {
+		Game game = new Game();
+		game.makeMove(1);
+		game.makeMove(2);
+		game.makeMove(3);
+		game.makeMove(4);
+		
+		Assert.assertEquals(State.Cross, game.getState(1));
+		Assert.assertEquals(State.Zero, game.getState(2));
+		Assert.assertEquals(State.Cross, game.getState(3));
+		Assert.assertEquals(State.Zero, game.getState(4));
+		
+	}
 
 	
 }

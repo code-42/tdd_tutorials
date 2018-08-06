@@ -33,7 +33,7 @@ public class Game {
 		
 	}
 
-	private State getState(int index) {
+	State getState(int index) {
 		// TODO Auto-generated method stub
 		return board[index - 1];
 	}
