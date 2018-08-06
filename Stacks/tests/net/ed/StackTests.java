@@ -1,10 +1,8 @@
 package net.ed;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 
 class StackTests {
 
@@ -28,6 +26,15 @@ class StackTests {
 		
 		Assert.assertEquals(expected, actual);
 		Assert.assertFalse(stack.isEmpty);
+	}
+	
+	@Test
+	void Pop_EmptyStack_ThrowsException() {
+		MyStack<Integer> stack = new MyStack<Integer>();
+//		stack.push(1);
+		System.out.println("34. " + stack.count);
+		System.out.println("35. " + stack.isEmpty);
+		Assertions.assertThrows(IllegalStateException.class, () -> stack.pop());
 	}
 	
 }

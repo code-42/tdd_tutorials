@@ -2,28 +2,37 @@ package net.ed;
 
 public class MyStack<T> {
 	
-	public boolean isEmpty;
-	public int count;
+	int count = 0;
+	boolean isEmpty = true;
+
+	public MyStack() {}
 
 	public boolean isIsEmpty() {
-		return isEmpty;
+		return count == 0;
 	}
 
 	public void setEmpty(boolean isEmpty) {
 		this.isEmpty = isEmpty;
 	}
 
-	public void push(T value) {
-
-		count++;
-	}
-	
-	public int getCount() {
+	private int getCount() {
 		return count;
 	}
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public void push(T value) {
+		this.count++;
+		isEmpty = false;
+	}
+	
+	public void pop() throws IllegalStateException {
+
+		if(isEmpty) {
+			throw new IllegalStateException();
+		}
 	}
 
 }
