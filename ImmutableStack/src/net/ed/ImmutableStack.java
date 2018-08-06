@@ -14,8 +14,8 @@ public class ImmutableStack<T> implements IStack<T> {
 
 		@Override
 		public IStack<T> pop() {
-			// TODO Auto-generated method stub
-			return null;
+
+			throw new IllegalStateException();
 		}
 
 		@Override

@@ -20,4 +20,10 @@ class ImmutableStackksTests {
 		Assertions.assertThrows(IllegalStateException.class, () -> emptyStack.peek());
 	}
 	
+	@Test
+	void Pop_EmptyStack_ThrowsException() {
+
+		IStack<Integer> emptyStack = new ImmutableStack<Integer>().Empty;
+		Assertions.assertThrows(IllegalStateException.class, () -> emptyStack.pop());
+	}
 }
