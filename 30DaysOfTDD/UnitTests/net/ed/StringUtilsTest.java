@@ -1,23 +1,45 @@
 package net.ed;
 
-// tutorial https://www.telerik.com/blogs/30-days-of-tdd-day-three-your-first-test
+/**
+ * tutorial https://www.telerik.com/blogs/30-days-of-tdd-day-three-your-first-test
+ * 
+ * Create a library method that takes in a sentence and a single character as parameters. 
+ * The method should return a number that indicates how many times the character appears 
+ * in the sentence.
+ */
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
 
 class StringUtilsTest {
 
 	@Test
-	void testShouldBeAbleToCountNumberOfLettersInSimpleSentence() {
-		fail("Not yet implemented");
+	void ShouldBeAbleToCountNumberOfLettersInSimpleSentence() {
 
 		String sentenceToScan = "TDD is awesome!";
 		char characterToScanFor = 'e';
-		int expectedResult = 2;
+		int expected = 2;
 		StringUtils stringUtils = new StringUtils();
 		
-		int result = stringUtils.FindNumberOfOccurences(sentenceToScan, characterToScanFor);
+		int actual = stringUtils.FindNumberOfOccurences(sentenceToScan, characterToScanFor);
 		
+		Assert.assertEquals(expected, actual);
 	}
 
+    @Test
+    public void ShouldBeAbleToCountNumberOfLettersInAComplexSentance()
+    {
+        String sentenceToScan = "Once is unique, twice is a coincidence, three times is a pattern.";
+        char characterToScanFor = 'n';
+        int expected = 5;
+        StringUtils stringUtils = new StringUtils();
+
+        int actual = stringUtils.FindNumberOfOccurences(sentenceToScan, characterToScanFor);
+
+        Assert.assertEquals(expected, actual);
+    }
+    
 }
