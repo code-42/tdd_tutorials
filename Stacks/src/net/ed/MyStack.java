@@ -1,6 +1,6 @@
 package net.ed;
 
-public class MyStack {
+public class MyStack<T> {
 	
 	public boolean isEmpty;
 	public int count;
@@ -13,7 +13,7 @@ public class MyStack {
 		this.isEmpty = isEmpty;
 	}
 
-	public void push(int i) {
+	public void push(T value) {
 
 		count++;
 	}
