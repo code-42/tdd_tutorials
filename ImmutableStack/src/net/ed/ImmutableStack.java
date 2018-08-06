@@ -4,12 +4,9 @@ public class ImmutableStack<T> implements IStack<T> {
 	
 	public class EmptyStack implements IStack<T>{
 		
-		public boolean isEmpty = true;
-
 		@Override
 		public IStack<T> push(T value) {
-			// TODO Auto-generated method stub
-			return null;
+			return new ImmutableStack<T>(value);
 		}
 
 		@Override
@@ -24,11 +21,18 @@ public class ImmutableStack<T> implements IStack<T> {
 			throw new IllegalStateException();
 		}
 		
+		public boolean isEmpty = true;
+	}
+	
+	private T head;
+	
+	ImmutableStack(T head) {
+		this.head = head;
 	}
 
 	@Override
-	public IStack<T> push(T value) {
-		return null;
+	public IStack<T> push(T value) throws UnsupportedOperationException {
+		return new ImmutableStack<T>(value);
 	}
 
 	@Override
@@ -38,7 +42,7 @@ public class ImmutableStack<T> implements IStack<T> {
 
 	@Override
 	public T peek() {
-		return null;
+		return head;
 	}
 	
 	private final EmptyStack empty = new EmptyStack();
