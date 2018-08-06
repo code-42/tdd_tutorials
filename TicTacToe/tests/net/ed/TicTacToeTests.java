@@ -74,6 +74,30 @@ public class TicTacToeTests {
 		
 		Assert.assertEquals(Winner.Zeroes, game.getWinner());
 	}
+	
+	@Test
+	public void GetWinner_CrossesWinDiagonal_ReturnsCrosses() {
+		
+		Game game = new Game();
+		
+		// 1 5 9 - crosses win
+		int[] moves = {1,4,5,2,9};
+		makeMoves(game, moves);
+		
+		Assert.assertEquals(Winner.Crosses, game.getWinner());
+	}
+	
+	@Test
+	public void GetWinner_GameIsUnfinished_ReturnsGameIsUnfinished() {
+		
+		Game game = new Game();
+		
+		// 1 5 9 - crosses win
+		int[] moves = {1,2,4};
+		makeMoves(game, moves);
+		
+		Assert.assertEquals(Winner.GameIsUnfinished, game.getWinner());
+	}
 
 	private void makeMoves(Game game, int[] indexes) {
 		

@@ -41,7 +41,8 @@ public class Game {
 	public enum Winner{
 		Zeroes,
 		Crosses,
-		Draw
+		Draw, 
+		GameIsUnfinished
 	}
 	
 	public Winner getWinner() {
@@ -73,6 +74,10 @@ public class Game {
 			}
 			
 		}
+		
+		if(movesCounter < 9)
+			return Winner.GameIsUnfinished;
+		
 		return Winner.Draw;
 		
 	}
