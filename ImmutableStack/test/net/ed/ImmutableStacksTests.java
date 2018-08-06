@@ -42,4 +42,16 @@ class ImmutableStacksTests {
 		
 		Assert.assertEquals(2, actual);
 	}
+	
+	@Test
+	void PushOntoEmptyStackOneItem_PopOneItem_ReturnsEmptyStack() {
+
+		IStack<Integer> stack = new ImmutableStack<Integer>(head).Empty;
+		stack = stack.push(1);
+		
+		IStack<Integer> actual = stack.pop();
+		
+		Assert.assertTrue(actual.isEmpty);
+	}
+	
 }
