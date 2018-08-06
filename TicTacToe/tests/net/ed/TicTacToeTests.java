@@ -14,6 +14,13 @@ public class TicTacToeTests {
 	}
 	
 	@Test
+	public void testCreateGame_GameIsInCorrectState() {
+		
+		Game game = new Game();
+		Assert.assertEquals(State.Unset, game.getState(1));
+	}
+	
+	@Test
 	public void testMakeMove_CounterShifts() {
 
 		Game game = new Game();
