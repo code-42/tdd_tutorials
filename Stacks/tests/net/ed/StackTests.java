@@ -10,7 +10,6 @@ class StackTests {
 	void IsEmpty_EmptyStack_ReturnsTrue() {
 
 		MyStack<Integer> stack = new MyStack<Integer>();
-		stack.isEmpty = true;
 		
 		Assert.assertTrue(stack.isEmpty);
 	}
@@ -22,7 +21,7 @@ class StackTests {
 		stack.push(1);
 		
 		int expected = 1;
-		int actual = stack.count;
+		int actual = stack.peek();
 		
 		Assert.assertEquals(expected, actual);
 		Assert.assertFalse(stack.isEmpty);
@@ -30,11 +29,23 @@ class StackTests {
 	
 	@Test
 	void Pop_EmptyStack_ThrowsException() {
+		
 		MyStack<Integer> stack = new MyStack<Integer>();
 //		stack.push(1);
 		System.out.println("34. " + stack.count);
 		System.out.println("35. " + stack.isEmpty);
 		Assertions.assertThrows(IllegalStateException.class, () -> stack.pop());
 	}
+	
+	@Test
+	public void Peek_PushTwoItems_ReturnsHeadItem() {
+		
+		MyStack<Integer> stack = new MyStack<Integer>();
+		stack.push(1);
+		stack.push(1);
+		
+		Assert.assertEquals(2, stack.peek());
+	}
+
 	
 }
