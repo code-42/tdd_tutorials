@@ -3,6 +3,8 @@ package net.ed;
 public class ImmutableStack<T> implements IStack<T> {
 	
 	public class EmptyStack implements IStack<T>{
+		
+		public boolean isEmpty = true;
 
 		@Override
 		public IStack<T> push(T value) {
@@ -18,8 +20,8 @@ public class ImmutableStack<T> implements IStack<T> {
 
 		@Override
 		public T peek() {
-			// TODO Auto-generated method stub
-			return null;
+
+			throw new IllegalStateException();
 		}
 		
 	}

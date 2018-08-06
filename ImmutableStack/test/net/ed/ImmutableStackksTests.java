@@ -1,11 +1,8 @@
 package net.ed;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import net.ed.ImmutableStack.EmptyStack;
+import org.junit.jupiter.api.Assertions;
 
 class ImmutableStackksTests {
 
@@ -16,4 +13,11 @@ class ImmutableStackksTests {
 		Assert.assertTrue(emptyStack.isEmpty);
 	}
 
+	@Test
+	void Peek_EmptyStack_ThrowsException() {
+
+		IStack<Integer> emptyStack = new ImmutableStack<Integer>().Empty;
+		Assertions.assertThrows(IllegalStateException.class, () -> emptyStack.peek());
+	}
+	
 }
