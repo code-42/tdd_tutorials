@@ -29,5 +29,14 @@ public class TicTacToeTests {
 		Assert.assertEquals(11, game.movesCounter);
 	}
 
+	@Test(expected = UnsupportedOperationException.class)
+	public void testMakeInvalidMove_ThrowsUnsupportedOperationException() {
 
+		Game game = new Game();
+		game.makeMove(1);
+		game.makeMove(1);
+		
+	}
+
+	
 }
