@@ -13,7 +13,20 @@ class StackTests {
 
 		MyStack stack = new MyStack();
 		stack.isEmpty = true;
+		
 		Assert.assertTrue(stack.isEmpty);
 	}
 
+	@Test
+	void Count_PushOneItem_ReturnsOne() {
+
+		MyStack stack = new MyStack();
+		stack.push(1);
+		
+		int expected = 1;
+		int actual = stack.count;
+		
+		Assert.assertEquals(expected, actual);
+	}
+	
 }
