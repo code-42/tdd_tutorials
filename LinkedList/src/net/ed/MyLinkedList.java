@@ -36,7 +36,14 @@ public class MyLinkedList<T> {
 	
 	public void addLast(ListNode<T> node) {
 		
-		head = tail = node;
+		if(count == 0) {
+			head = node;
+		} else {
+			tail.next = node;
+		}
+		
+		tail = node;
+		count++;
 		
 	}
 

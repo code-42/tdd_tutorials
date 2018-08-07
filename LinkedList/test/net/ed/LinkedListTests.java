@@ -62,4 +62,19 @@ class LinkedListTests {
         Assert.assertSame(list.head, list.tail);
     }
 
+	@Test
+    public void AddLastTwoElements_ListIsInCorrectState() {
+		
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        ((MyLinkedList<Integer>) list).addLast(1);
+        ((MyLinkedList<Integer>) list).addLast(2);
+        
+        int list_head_value = list.head.value;
+        int list_tail_value = list.tail.value;
+
+        Assert.assertEquals(1, list_head_value);
+        Assert.assertEquals(2, list_tail_value);
+        Assert.assertEquals(2, list.count);
+        Assert.assertSame(list.head.next, list.tail);
+    }
 }
