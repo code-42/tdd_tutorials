@@ -94,11 +94,18 @@ class LinkedListTests {
         ((MyLinkedList<Integer>) list).addFirst(1);
         ((MyLinkedList<Integer>) list).removeFirst();
         
-//        Assertions.assertThrows(IllegalStateException.class, () -> list.RemoveFirst());
-		
 		Assert.assertNull(list.head);
 		Assert.assertNull(list.tail);
 		Assert.assertEquals(0, list.count);
         
 	}
+	
+	@Test
+    public void Removelast_EmptyList_ThrowsException() {
+		
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        Assertions.assertThrows(IllegalStateException.class, () -> list.removeLast());
+        
+	}
+	
 }
