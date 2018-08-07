@@ -3,6 +3,7 @@ package net.ed;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
@@ -77,4 +78,13 @@ class LinkedListTests {
         Assert.assertEquals(2, list.count);
         Assert.assertSame(list.head.next, list.tail);
     }
+	
+	@Test
+    public void RemoveFirst_EmptyList_ThrowsException() {
+		
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        Assertions.assertThrows(IllegalStateException.class, () -> list.RemoveFirst());
+        
+        
+	}
 }
