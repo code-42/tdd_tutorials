@@ -63,6 +63,10 @@ public class MyLinkedList<T> {
 
 		if(count == 0)
 			throw new IllegalStateException();
+		
+		head = null;
+		tail = null;
+		count--;
 	}
 
 }
