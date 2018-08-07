@@ -4,6 +4,7 @@ public class MyLinkedList<T> {
 	
 	public ListNode<T> head;
 	public ListNode<T> tail;
+	public int count;
 	
 	public void addFirst(T value) {
 
@@ -12,7 +13,19 @@ public class MyLinkedList<T> {
 	
 	public void addFirst(ListNode<T> node) {
 
-		tail = head = node;
+		// save the head node so we don't lose it
+		ListNode<T> temp = head;
+		
+		// point head to the new node
+		head = node;
+		
+		// insert the rest of the list behind the head
+		head.next = temp;
+		
+		count++;
+		
+		if(count == 1)
+			tail = head;
 	}
 
 }

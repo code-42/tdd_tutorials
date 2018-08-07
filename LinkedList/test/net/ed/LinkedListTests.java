@@ -10,6 +10,7 @@ class LinkedListTests {
 
 	@Test
     public void CreateNode_SetsValueAndNextIsNull() {
+		
         ListNode<Integer> node = new ListNode<Integer>(1);
         int actual = node.value;
         
@@ -19,13 +20,28 @@ class LinkedListTests {
 	
 	@Test
     public void AddFirst_HeadAndTailAreSame() {
+		
         MyLinkedList<Integer> list = new MyLinkedList<Integer>();
         ((MyLinkedList<Integer>) list).addFirst(1);
         int actual = list.head.value;
 
         Assert.assertEquals(1, actual);
-        Assert.assertEquals(1, actual);
-        Assert.assertEquals(list.head, list.tail);
+        Assert.assertSame(list.head, list.tail);
+    }
+	
+	@Test
+    public void AddFirstTwoElements_ListIsInCorrectState() {
+		
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        ((MyLinkedList<Integer>) list).addFirst(1);
+        ((MyLinkedList<Integer>) list).addFirst(2);
+        int list_head_value = list.head.value;
+        int list_tail_value = list.tail.value;
+
+        Assert.assertEquals(2, list_head_value);
+        Assert.assertEquals(1, list_tail_value);
+        Assert.assertEquals(2, list.count);
+        Assert.assertSame(list.head.next, list.tail);
     }
 
 }
