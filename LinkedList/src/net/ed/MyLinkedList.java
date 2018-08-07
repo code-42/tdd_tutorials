@@ -47,10 +47,16 @@ public class MyLinkedList<T> {
 		
 	}
 
-	public void RemoveFirst() {
+	public void removeFirst() {
 		// TODO Auto-generated method stub
 		if(count == 0)
 			throw new IllegalStateException();
+		
+		head = head.next;
+		count--;
+		
+		if(count == 0) 
+			tail = null;
 	}
 
 }
