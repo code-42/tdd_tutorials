@@ -23,9 +23,12 @@ class LinkedListTests {
 		
         MyLinkedList<Integer> list = new MyLinkedList<Integer>();
         ((MyLinkedList<Integer>) list).addFirst(1);
-        int actual = list.head.value;
+        
+        int list_head_value = list.head.value;
+        int list_tail_value = list.tail.value;
 
-        Assert.assertEquals(1, actual);
+        Assert.assertEquals(1, list_head_value);
+        Assert.assertEquals(1, list_tail_value);
         Assert.assertSame(list.head, list.tail);
     }
 	
@@ -35,6 +38,7 @@ class LinkedListTests {
         MyLinkedList<Integer> list = new MyLinkedList<Integer>();
         ((MyLinkedList<Integer>) list).addFirst(1);
         ((MyLinkedList<Integer>) list).addFirst(2);
+        
         int list_head_value = list.head.value;
         int list_tail_value = list.tail.value;
 
@@ -42,6 +46,20 @@ class LinkedListTests {
         Assert.assertEquals(1, list_tail_value);
         Assert.assertEquals(2, list.count);
         Assert.assertSame(list.head.next, list.tail);
+    }
+	
+	@Test
+    public void AddLast_HeadAndTailAreSame() {
+		
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        ((MyLinkedList<Integer>) list).addLast(1);
+
+        int list_head_value = list.head.value;
+        int list_tail_value = list.tail.value;
+        
+        Assert.assertEquals(1, list_head_value);
+        Assert.assertEquals(1, list_tail_value);
+        Assert.assertSame(list.head, list.tail);
     }
 
 }

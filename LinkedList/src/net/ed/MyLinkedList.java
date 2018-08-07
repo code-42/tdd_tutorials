@@ -28,4 +28,16 @@ public class MyLinkedList<T> {
 			tail = head;
 	}
 
+	public void addLast(T value) {
+
+		addLast(new ListNode<T>(value));
+		
+	}
+	
+	public void addLast(ListNode<T> node) {
+		
+		head = tail = node;
+		
+	}
+
 }
