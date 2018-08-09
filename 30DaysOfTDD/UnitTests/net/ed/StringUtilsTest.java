@@ -11,6 +11,7 @@ package net.ed;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
@@ -41,5 +42,23 @@ class StringUtilsTest {
 
         Assert.assertEquals(expected, actual);
     }
+    
+    @Test
+	void ShouldGetAnArgumentExceptionWhenCharacterToScanForIsLargerThanOneCharacter() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			throw new IllegalArgumentException("a message");
+		});
+		
+		String sentenceToScan = "This test should throw an exception";
+		String characterToScanFor = "xx";
+		int expected = 0;
+		StringUtils stringUtils = new StringUtils();
+		
+		int actual = stringUtils.FindNumberOfOccurences(sentenceToScan, characterToScanFor);
+
+		Assert.assertEquals(expected, actual);
+	}
+    
     
 }
