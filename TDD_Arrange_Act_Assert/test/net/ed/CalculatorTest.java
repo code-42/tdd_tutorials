@@ -1,17 +1,17 @@
 package net.ed;
 
+//source: TDD Unit Tests in Java - Arrange, Act, Assert 
+//https://www.youtube.com/watch?v=d1EAyR_NCOA
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.when;
 
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
 
 import org.junit.Assert;
 import org.junit.Before;
-
-// source: TDD Unit Tests in Java - Arrange, Act, Assert 
-// https://www.youtube.com/watch?v=d1EAyR_NCOA
 
 import org.junit.Test;
 
