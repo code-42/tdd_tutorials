@@ -5,10 +5,14 @@ package net.ed;
 
 public class Calculator {
 
-	private NumberSource numberSource;
+	private final NumberSource numberSource;
+	
+	// add constructor with dependency injection
+	Calculator(final NumberSource numberSource) {
+		this.numberSource = numberSource;
+	}
 
 	public long addTwoNumbers() {
-		
 		return numberSource.fetchNextNumber();
 	}
 	
