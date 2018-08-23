@@ -7,13 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class StringSwapperTest {
+	
+	StringSwapper swapper = new StringSwapper();
 
 	@Test
-	void testStringWith2CharsIsReversed() {
-
-		StringSwapper swapper = new StringSwapper();
-		
-		assertEquals("BA", swapper.swapLast2Chars("AB"));
+	void testSwap2Chars() {
+		assertEquals("BA", swapper.swap2Chars("AB"));
+	}
+	
+	@Test
+	void testStringWith4Chars() {
+		assertEquals("ABDC", swapper.swapLast2Chars("ABCD"));
 	}
 
 }
