@@ -5,9 +5,11 @@ package net.ed;
 
 public class Calculator {
 
+	private NumberSource numberSource;
+
 	public long addTwoNumbers() {
 		
-		return 0;
+		return numberSource.fetchNextNumber();
 	}
 	
 }
