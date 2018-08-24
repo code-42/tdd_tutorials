@@ -10,7 +10,7 @@ public class TodoBusinessImpl {
 	
 	private TodoService todoService;
 
-	// Dependency Injection
+	// Constructor  Dependency Injection
 	TodoBusinessImpl(TodoService todoService) {
 		this.todoService = todoService;
 	}
@@ -19,7 +19,8 @@ public class TodoBusinessImpl {
 		List<String> filteredTodos = new ArrayList<String>();
 		List<String> allTodos = todoService.retrieveTodos(user);
 		for (String todo : allTodos) {
-			if (todo.contains("Spring")) {
+			if (todo.contains(user)) {
+				System.out.println(todo);
 				filteredTodos.add(todo);
 			}
 		}

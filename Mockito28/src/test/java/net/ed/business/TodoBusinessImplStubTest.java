@@ -12,11 +12,12 @@ import net.ed.data.api.TodoServiceStub;
 public class TodoBusinessImplStubTest {
 
 	@Test
-	public void retrieveTodosRelatedToSpring_usingAStub() {
+	public void testRetrieveTodosRelatedToSpring_usingAStub() {
+		 
 		TodoService todoServiceStub = new TodoServiceStub();
 		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceStub);
 		List<String> filteredTodos = todoBusinessImpl
-				.retrieveTodosRelatedToSpring("Ranga");
+				.retrieveTodosRelatedToSpring("Spring");
 		assertEquals(2, filteredTodos.size());
 	}
 

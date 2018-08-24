@@ -1,13 +1,19 @@
-package net.ed.data.api;
+ package net.ed.data.api;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class TodoServiceStub implements TodoService {
+	
+	// Dynamic Condition
+	// Service Definition
 
 	public List<String> retrieveTodos(String user) {
-		return Arrays.asList("Learn Spring MVC", "Learn Spring",
-				"Learn to Dance");
+		return Arrays.asList(
+				"Learn Spring MVC", 
+				"Learn Spring",
+				"Learn to Dance"
+				 );
 	}
 
 }
