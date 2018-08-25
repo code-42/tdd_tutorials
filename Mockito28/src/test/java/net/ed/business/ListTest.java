@@ -26,4 +26,14 @@ public class ListTest {
 		assertEquals(2, listMock.size());
 		assertEquals(3, listMock.size());
 	}
+	
+	@Test
+	public void testMockListGetMethod() {
+		
+		List listMock = mock(List.class);
+		when(listMock.get(0)).thenReturn("in28Minutes");
+		
+		assertEquals("in28Minutes", listMock.get(0));
+		assertEquals(null, listMock.get(1));
+	}
 }
