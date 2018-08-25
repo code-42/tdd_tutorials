@@ -41,4 +41,17 @@ public class ListTest {
 		assertEquals("in28Minutes", listMock.get(0));
 		assertEquals("in28Minutes", listMock.get(1));
 	}
+	
+	@Test(expected=RuntimeException.class)
+	public void testMockList_throwAnException() {
+		
+		List listMock = mock(List.class);
+		
+		when(listMock.get(0)).thenReturn("in28Minutes");
+		
+		// Argument Matcher
+		when(listMock.get(anyInt())).thenThrow(new RuntimeException("Some Exception"));
+		
+		listMock.get(0);
+	}
 }
