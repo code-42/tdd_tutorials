@@ -21,7 +21,7 @@ public class TodoBusinessImplMockTest {
 	 * Mocks offer more functionality than stubs.
 	 * You can verify method calls and a lot of other things.
 	 */
-
+ 
 	@Test
 	public void testRetrieveTodosRelatedToSpring_usingAMock() {
 		
