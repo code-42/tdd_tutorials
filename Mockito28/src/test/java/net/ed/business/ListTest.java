@@ -17,4 +17,13 @@ public class ListTest {
 		when(listMock.size()).thenReturn(2);
 		assertEquals(2, listMock.size());
 	}
+	
+	@Test
+	public void testMockListSize_ReturnMultipleValues() {
+		
+		List listMock = mock(List.class);
+		when(listMock.size()).thenReturn(2).thenReturn(3);
+		assertEquals(2, listMock.size());
+		assertEquals(3, listMock.size());
+	}
 }
