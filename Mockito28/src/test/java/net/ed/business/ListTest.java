@@ -1,6 +1,8 @@
 package net.ed.business;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -82,5 +84,19 @@ public class ListTest {
 		when(listMock.subList(anyInt(), 5)).thenThrow(new RuntimeException("Some Exception"));
 		
 		listMock.get(0);
+	}
+	
+	@Test
+	public void testMockListGetMethod_usingBDD() {
+		
+		// Given
+		List<String> listMock = mock(List.class);
+		given(listMock.get(anyInt())).willReturn("in28Minutes");
+
+		// When
+		String firstElement = listMock.get(0);
+		
+		// Then
+		assertThat(firstElement, is("in28Minutes"));
 	}
 }

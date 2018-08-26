@@ -1,6 +1,8 @@
 package net.ed.business;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -55,5 +57,26 @@ public class TodoBusinessImplMockTest {
 				.retrieveTodosRelatedToSpring("Spring");
 		
 		assertEquals(0, filteredTodos.size());
+	}
+	
+	@Test
+	public void testRetrieveTodosRelatedToSpring_usingBDDk() {
+		
+		// Given
+		TodoService todoServiceMock = mock(TodoService.class);
+		
+ 		List<String> allTodos = Arrays.asList("Learn Spring MVC",
+				"Learn Spring", "Learn to Dance");
+		
+		given(todoServiceMock.retrieveTodos("Spring")).willReturn(allTodos);
+		
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+		
+		// When SUT
+		List<String> filteredTodos = todoBusinessImpl
+				.retrieveTodosRelatedToSpring("Spring");
+		
+		// Then
+		assertThat(filteredTodos.size(), is(2));
 	}
 }
